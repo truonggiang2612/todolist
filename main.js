@@ -5,21 +5,18 @@ const deleteAllBtn = document.querySelector(".footer button");
 
 //LẤY DỮ LIỆU NGƯỜI DÙNG NHẬP
 inputBox.onkeyup = () => {
-    // Lấy giá trị khi user nhập vào
     let userEnteredValue = inputBox.value;
-    // Nếu user nhập vào giá trị ( không phải là khoảng trắng )
-    if(userEnteredValue.trim() != 0){
-        //  Thì nút add của ta sẽ sáng lên
-        // Trường hợp nhập toàn khoảng trắng ( space ) thì sẽ không sáng lên nhé 
-        addBtn.classList.add("active");
+    
+    if(userEnteredValue.trim() != 0){     
+        addBtn.classList.add("active");  // Nếu user nhập vào không phải là khoảng trắng, thì nút add của ta sẽ sáng lên
     } else {
-        // Ngược lại thì không sáng
         addBtn.classList.remove("active");
     };
 };
 
 showTasks();
-// Giờ mình sẽ viết hàm để thao tác với nút Add nhen
+
+// ADD TASK
 addBtn.onclick = ()=>{
     // Khi user nhấn vào nút Add 
     // Lấy giá trị mà user đã nhập ở ô input
